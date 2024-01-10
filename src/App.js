@@ -103,7 +103,7 @@ const App = () => {
               />
               <br />
 
-              <button>Submit</button>
+              <button className="submit-button">Submit</button>
             </form>
           </div>
       )}
