@@ -6,6 +6,11 @@
   flex-direction: column;
 }
 
+.submit-button{
+  width: 70px;
+  margin-top: 10px;
+}
+
 .modal-content{
   display: flex;
   justify-content: center;
@@ -36,7 +41,3 @@ button{
   border-radius: 10px;
 }
 
-.submit-button{
-  width: 70px;
-  margin-top: 10px;
-}

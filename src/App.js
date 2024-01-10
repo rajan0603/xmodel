@@ -55,7 +55,7 @@ const App = () => {
             <h2>Fill Details</h2>
             <form
               onSubmit={(e) => {
-                // e.preventDefault();
+                e.preventDefault();
                 validateForm();
               }}
             > 
