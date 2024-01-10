@@ -43,12 +43,11 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div className="modal">
       <h1>User Details Model</h1>
       <button onClick={openModal}>Open Modal</button>
 
       {isOpen && (
-        <div className="modal">
           <div className="modal-content">
             {/* <span onClick={closeModal} className="close-btn">
               &times;
@@ -107,7 +106,6 @@ const App = () => {
               <button>Submit</button>
             </form>
           </div>
-        </div>
       )}
     </div>
   );
