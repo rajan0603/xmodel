@@ -45,7 +45,7 @@ const App = () => {
   return (
     <div className="modal">
       <h1>User Details Model</h1>
-      <button onClick={openModal}>Open Modal</button>
+      <button onClick={openModal}>Open Form</button>
 
       {isOpen && (
           <div className="modal-content">
