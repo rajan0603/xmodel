@@ -39,7 +39,7 @@ const App = () => {
 
     // If all validations pass, you can proceed with form submission or other actions
     // alert('Form submitted successfully!');
-    openModal();
+    closeModal();
   };
 
   return (
