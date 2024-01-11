@@ -52,6 +52,10 @@ const App = () => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
         // Clicked outside the modal, close it
         setIsOpen(false);
+        setUsername("");
+        setEmail("");
+        setDob("");
+        setPhone("");
       }
     };
 
