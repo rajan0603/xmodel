@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -7,6 +7,7 @@ const App = () => {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [dob, setDob] = useState('');
+  const modalRef = useRef();
 
   const openModal = () => {
     setIsOpen(true);
@@ -42,13 +43,32 @@ const App = () => {
     closeModal();
   };
 
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        // Clicked outside the modal, close it
+        setIsOpen(false);
+      }
+    };
+
+    // Attach the event listener when the modal is open
+    if (isOpen) {
+      document.addEventListener('mousedown', handleOutsideClick);
+    }
+
+    // Remove the event listener when the component unmounts or modal closes
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick);
+    };
+  }, [isOpen]);
+
   return (
     <div className="modal">
       <h1>User Details Model</h1>
       <button onClick={openModal}>Open Form</button>
 
       {isOpen && (
-          <div className="modal-content">
+          <div className="modal-content" ref={modalRef}>
             {/* <span onClick={closeModal} className="close-btn">
               &times;
             </span> */}
